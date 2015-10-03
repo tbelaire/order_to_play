@@ -6,6 +6,64 @@
 	<link rel="stylesheet" type="text/css" href="http://devheart.org/examples/jquery-customizable-layout-using-drag-and-drop/devheart-examples.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css" />
 	
+  <style type="text/css">
+    .listheader {
+      text-align:center;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .donebutton {
+      text-align:center;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    #header {
+      background-color:black;
+      color:white;
+      text-align:center;
+      /*padding:5px;*/
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .avatar {
+        display:inline-block;
+        width : 5%;
+        font-size: 20px;
+        padding-top: 5px;
+        height : 40px;
+        vertical-align: top;
+    }
+    .name {
+        display:inline-block;
+        width : 5%;
+        padding-top:10px;
+        font-size: 20px;
+        height : 40px;
+        vertical-align: top;
+    }
+    .title {
+        display:inline-block;
+        width : 80%;
+        padding-top:5px;
+        font-size: 30px;
+        height : 45px;
+        vertical-align: top;
+    }
+    .points {
+        display:inline-block;
+        width : 10%;
+        padding-top:10px;
+        font-size: 20px;
+        height : 40px;
+        vertical-align: top;
+    }
+  </style>
+
 	<script type="text/javascript">
 
 	function togglePlay(icon_id, song_id) {
@@ -22,39 +80,51 @@
 	}
 	</script>
 </head>
-<body class="dhe-body">
+<body>
+
+<div id="header">
+    <div class="avatar"><img src="avatar.png" height="40" width="40"></img></div>
+    <div class="name">John Smith</div>
+    <div class="title">Playlist Creator!</div>
+    <div class="points">Score: 37</div>
+</div>
 
 <div id="center-wrapper">
 
-	<div class="dhe-example-section" id="ex-1-3">
-		<div class="dhe-example-section-header">
-			<h3 class="dhe-h3 dhe-example-title">Song Ordering</h3>
-			<div class="dhe-example-description">Drag the songs into the desired ordering.</div>
+  <div class="dhe-example-section" id="ex-1-3">
+    <div class="dhe-example-section-header">
+			<div class="dhe-example-description"><b>Instructions: </b>Drag the songs into the order that you think flows the best. When you are finished making the playlist, press the 'Submit' button.</div>
 		</div>
+
+    <div align="center" style="clear:both;">
+      <button onClick="window.location.reload()" class="donebutton"><span>Reset</span></button>
+      <button onclick="" class="donebutton"><span>Submit</span></button>
+    </div>
+
 		<div class="dhe-example-section-content">
 
 			<!-- BEGIN: XHTML for example 1.3 -->
 
 			<div id="example-1-3">
 
-				<div class="column left first" style="padding:50px">
+				<div class="column left first" style="padding:30px">
 
-					<h6 align="center" class="dhe-h3 dhe-example-title">Your Order</h6>
+					<div class="listheader">Your Playlist</div>
 					<ul class="sortable-list">
 					</ul>
 
 				</div>
 
-				<div class="column left" style="padding:50px">
+				<div class="column left" style="padding:30px">
 
-					<h6 align="center" class="dhe-h3 dhe-example-title">Songs</h6>
+					<div class="listheader">Songs</div>
 					<ul class="sortable-list">
 						<li class="sortable-item">
 						<div class=songbox>
 							<button onclick="togglePlay('SongAicon', 'songA')">
 								<span id="SongAicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song A</span>
-							<audio id="songA" src="audioA.mp3"></audio>
+							<audio id="songA" src="clips/pop/01%20Cars.mp3"></audio>
 						</div>
 						</li>
 						<li class="sortable-item">
@@ -62,7 +132,7 @@
 							<button onclick="togglePlay('SongBicon', 'songB')">
 								<span id="SongBicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song B</span>
-							<audio id="songB" src="audioB.mp3"></audio>
+							<audio id="songB" src="clips/pop/01%20My%20Prerogative.mp3"></audio>
 						</div>
 						</li>
 						<li class="sortable-item">
@@ -70,7 +140,7 @@
 							<button onclick="togglePlay('SongCicon', 'songC')">
 								<span id="SongCicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song C</span>
-							<audio id="songC" src="audioC.mp3"></audio>
+							<audio id="songC" src="clips/pop/01%20Our%20Lips%20Are%20Sealed.mp3"></audio>
 						</div>
 						</li>
 						<li class="sortable-item">
@@ -78,7 +148,7 @@
 							<button onclick="togglePlay('SongDicon', 'songD')">
 								<span id="SongDicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song D</span>
-							<audio id="songD" src="audioD.mp3"></audio>
+							<audio id="songD" src="clips/pop/01%20Take%20On%20Me.mp3"></audio>
 						</div>
 						</li>
 						<li class="sortable-item">
@@ -86,7 +156,7 @@
 							<button onclick="togglePlay('SongEicon', 'songE')">
 								<span id="SongEicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song E</span>
-							<audio id="songE" src="audioE.mp3"></audio>
+							<audio id="songE" src="clips/pop/01%20Walking%20On%20Sunshine.mp3"></audio>
 						</div>
 						</li>
 					</ul>
@@ -101,11 +171,8 @@
 
 				</div>
  -->
-				<div class="clearer">&nbsp;</div>
 
 			</div>
-
-			<!-- END: XHTML for example 1.3 -->
 
 		</div>
 	</div>
