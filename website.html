@@ -4,6 +4,8 @@
 	<title>Song Ordering</title>
 	<link rel="stylesheet" type="text/css" href="http://devheart.org/examples/jquery-customizable-layout-using-drag-and-drop/1-getting-started-with-sortable-lists/style.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="http://devheart.org/examples/jquery-customizable-layout-using-drag-and-drop/devheart-examples.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css" />
+	
 </head>
 <body class="dhe-body">
 
@@ -32,11 +34,51 @@
 
 					<h6 align="center" class="dhe-h3 dhe-example-title">Songs</h6>
 					<ul class="sortable-list">
-						<li class="sortable-item">Song A</li>
-						<li class="sortable-item">Song B</li>
-						<li class="sortable-item">Song C</li>
-						<li class="sortable-item">Song D</li>
-						<li class="sortable-item">Song E</li>
+						<li class="sortable-item">
+						<div class=songbox>
+							<button onclick="document.getElementById('songA').play()">
+								<span class="ui-icon ui-icon-play">Play</span></button>
+							<span>Song A</span>
+							<audio id="songA" src="audioA.mp3"></audio>
+							<button onclick="document.getElementById('songA').pause()">Pause</button>
+						</div>
+                        </li>
+						<li class="sortable-item">
+						<div class=songbox>
+							<button onclick="document.getElementById('songB').play()">
+								<span class="ui-icon ui-icon-play">Play</span></button>
+							<span>Song B</span>
+							<audio id="songB" src="audioB.mp3"></audio>
+							<button onclick="document.getElementById('songB').pause()">Pause</button>
+						</div>
+						</li>
+						<li class="sortable-item">
+						<div class=songbox>
+							<button onclick="document.getElementById('songC').play()">
+								<span class="ui-icon ui-icon-play">Play</span></button>
+							<span>Song C</span>
+							<audio id="songC" src="audioC.mp3"></audio>
+							<button onclick="document.getElementById('songC').pause()">Pause</button>
+						</div>
+						</li>
+						<li class="sortable-item">
+						<div class=songbox>
+							<button onclick="document.getElementById('songD').play()">
+								<span class="ui-icon ui-icon-play">Play</span></button>
+							<span>Song D</span>
+							<audio id="songD" src="audioD.mp3"></audio>
+							<button onclick="document.getElementById('songD').pause()">Pause</button>
+						</div>
+						</li>
+						<li class="sortable-item">
+						<div class=songbox>
+							<button onclick="document.getElementById('songE').play()">
+								<span class="ui-icon ui-icon-play">Play</span></button>
+							<span>Song E</span>
+							<audio id="songE" src="audioE.mp3"></audio>
+							<button onclick="document.getElementById('songE').pause()">Pause</button>
+						</div>
+						</li>
 					</ul>
 
 				</div>
@@ -78,10 +120,6 @@ $(document).ready(function(){
 });
 
 </script>
-
-<!-- This is NOT a part of the example code (Google Analytics) -->
-<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
-<script type="text/javascript">try { var pageTracker = _gat._getTracker("UA-223188-18"); pageTracker._setDomainName(".devheart.org"); pageTracker._trackPageview(); } catch(err) {}</script>
 
 </body>
 </html>
