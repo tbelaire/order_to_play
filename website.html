@@ -65,6 +65,7 @@
   </style>
 
 	<script type="text/javascript">
+	var song_ids = ['SongA', 'SongB', 'SongC', 'SongD', 'SongE'];
 
 	function togglePlay(icon_id, song_id) {
 		var e = document.getElementById(icon_id);
@@ -72,6 +73,16 @@
 		$(e).toggleClass('ui-icon-stop')
 		var song = document.getElementById(song_id);
 		if(song.paused) {
+			for (i in song_ids) {
+				var other_song = document.getElementById(song_ids[i])
+				if(!other_song.paused) {
+					other_song.pause();
+					other_song.currentTime = 0;
+					var other_icon = document.getElementById(song_ids[i] + "icon")
+					$(other_icon).toggleClass('ui-icon-play')
+					$(other_icon).toggleClass('ui-icon-stop')
+				}
+			}
 			song.play();
 		} else {
 			song.pause();
@@ -130,42 +141,42 @@
 					<ul class="sortable-list">
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="togglePlay('SongAicon', 'songA')">
+							<button onclick="togglePlay('SongAicon', 'SongA')">
 								<span id="SongAicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song A</span>
-							<audio id="songA" src="audioA.mp3"></audio>
+							<audio id="SongA" src="audioA.mp3"></audio>
 						</div>
 						</li>
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="togglePlay('SongBicon', 'songB')">
+							<button onclick="togglePlay('SongBicon', 'SongB')">
 								<span id="SongBicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song B</span>
-							<audio id="songB" src="audioB.mp3"></audio>
+							<audio id="SongB" src="audioB.mp3"></audio>
 						</div>
 						</li>
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="togglePlay('SongCicon', 'songC')">
+							<button onclick="togglePlay('SongCicon', 'SongC')">
 								<span id="SongCicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song C</span>
-							<audio id="songC" src="audioC.mp3"></audio>
+							<audio id="SongC" src="audioC.mp3"></audio>
 						</div>
 						</li>
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="togglePlay('SongDicon', 'songD')">
+							<button onclick="togglePlay('SongDicon', 'SongD')">
 								<span id="SongDicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song D</span>
-							<audio id="songD" src="audioD.mp3"></audio>
+							<audio id="SongD" src="audioD.mp3"></audio>
 						</div>
 						</li>
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="togglePlay('SongEicon', 'songE')">
+							<button onclick="togglePlay('SongEicon', 'SongE')">
 								<span id="SongEicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song E</span>
-							<audio id="songE" src="audioE.mp3"></audio>
+							<audio id="SongE" src="audioE.mp3"></audio>
 						</div>
 						</li>
 					</ul>
