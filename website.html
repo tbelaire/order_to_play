@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Song Ordering</title>
+	<title>Playlist Creator</title>
 	<link rel="stylesheet" type="text/css" href="http://devheart.org/examples/jquery-customizable-layout-using-drag-and-drop/1-getting-started-with-sortable-lists/style.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="http://devheart.org/examples/jquery-customizable-layout-using-drag-and-drop/devheart-examples.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css" />
@@ -14,7 +14,7 @@
       font-size: 30px;
       font-weight: bold;
     }
-    .donebutton {
+    .action_button {
       text-align:center;
       overflow: hidden;
       white-space: nowrap;
@@ -78,6 +78,15 @@
 			song.currentTime = 0;
 		}
 	}
+
+  function submitResults() {
+    if ($("#playlist li").length == 5) {
+      window.alert("Submitted!");      
+    } else {
+      window.alert("You haven't finished making the playlist yet!");      
+    }
+  }
+
 	</script>
 </head>
 <body>
@@ -97,8 +106,8 @@
 		</div>
 
     <div align="center" style="clear:both;">
-      <button onClick="window.location.reload()" class="donebutton"><span>Reset</span></button>
-      <button onclick="" class="donebutton"><span>Submit</span></button>
+      <button onClick="window.location.reload()" class="action_button"><span>Reset</span></button>
+      <button onclick="submitResults()" class="action_button"><span>Submit</span></button>
     </div>
 
 		<div class="dhe-example-section-content">
@@ -110,7 +119,7 @@
 				<div class="column left first" style="padding:30px">
 
 					<div class="listheader">Your Playlist</div>
-					<ul class="sortable-list">
+					<ul class="sortable-list" id="playlist">
 					</ul>
 
 				</div>
