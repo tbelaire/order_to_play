@@ -67,6 +67,15 @@
 	<script type="text/javascript">
 	var song_ids = ['SongA', 'SongB', 'SongC', 'SongD', 'SongE'];
 
+	function addStopListener(icon_id, song_id) {
+		var e = document.getElementById(icon_id);		
+		var song = document.getElementById(song_id);
+		song.addEventListener("ended", function() {
+			$(e).toggleClass('ui-icon-play')
+	        $(e).toggleClass('ui-icon-stop')
+	    });
+	}
+
 	function togglePlay(icon_id, song_id) {
 		var e = document.getElementById(icon_id);
 		$(e).toggleClass('ui-icon-play')
@@ -137,7 +146,7 @@
 
 				<div class="column left" style="padding:30px">
 
-					<div class="listheader">Songs</div>
+					<div class="listheader">Songs (Genre: Pop)</div>
 					<ul class="sortable-list">
 						<li class="sortable-item">
 						<div class=songbox>
@@ -215,6 +224,12 @@ $(document).ready(function(){
 	});
 
 });
+
+addStopListener('SongAicon', 'SongA');
+addStopListener('SongBicon', 'SongB');
+addStopListener('SongCicon', 'SongC');
+addStopListener('SongDicon', 'SongD');
+addStopListener('SongEicon', 'SongE');
 
 </script>
 
