@@ -6,6 +6,21 @@
 	<link rel="stylesheet" type="text/css" href="http://devheart.org/examples/jquery-customizable-layout-using-drag-and-drop/devheart-examples.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css" />
 	
+	<script type="text/javascript">
+
+	function togglePlay(icon_id, song_id) {
+		var e = document.getElementById(icon_id);
+		$(e).toggleClass('ui-icon-play')
+		$(e).toggleClass('ui-icon-stop')
+		var song = document.getElementById(song_id);
+		if(song.paused) {
+			song.play();
+		} else {
+			song.pause();
+			song.currentTime = 0;
+		}
+	}
+	</script>
 </head>
 <body class="dhe-body">
 
@@ -36,47 +51,42 @@
 					<ul class="sortable-list">
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="document.getElementById('songA').play()">
-								<span class="ui-icon ui-icon-play">Play</span></button>
+							<button onclick="togglePlay('SongAicon', 'songA')">
+								<span id="SongAicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song A</span>
 							<audio id="songA" src="audioA.mp3"></audio>
-							<button onclick="document.getElementById('songA').pause()">Pause</button>
 						</div>
-                        </li>
+						</li>
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="document.getElementById('songB').play()">
-								<span class="ui-icon ui-icon-play">Play</span></button>
+							<button onclick="togglePlay('SongBicon', 'songB')">
+								<span id="SongBicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song B</span>
 							<audio id="songB" src="audioB.mp3"></audio>
-							<button onclick="document.getElementById('songB').pause()">Pause</button>
 						</div>
 						</li>
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="document.getElementById('songC').play()">
-								<span class="ui-icon ui-icon-play">Play</span></button>
+							<button onclick="togglePlay('SongCicon', 'songC')">
+								<span id="SongCicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song C</span>
 							<audio id="songC" src="audioC.mp3"></audio>
-							<button onclick="document.getElementById('songC').pause()">Pause</button>
 						</div>
 						</li>
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="document.getElementById('songD').play()">
-								<span class="ui-icon ui-icon-play">Play</span></button>
+							<button onclick="togglePlay('SongDicon', 'songD')">
+								<span id="SongDicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song D</span>
 							<audio id="songD" src="audioD.mp3"></audio>
-							<button onclick="document.getElementById('songD').pause()">Pause</button>
 						</div>
 						</li>
 						<li class="sortable-item">
 						<div class=songbox>
-							<button onclick="document.getElementById('songE').play()">
-								<span class="ui-icon ui-icon-play">Play</span></button>
+							<button onclick="togglePlay('SongEicon', 'songE')">
+								<span id="SongEicon" class="ui-icon ui-icon-play">Play</span></button>
 							<span>Song E</span>
 							<audio id="songE" src="audioE.mp3"></audio>
-							<button onclick="document.getElementById('songE').pause()">Pause</button>
 						</div>
 						</li>
 					</ul>
